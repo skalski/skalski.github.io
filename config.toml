@@ -1,4 +1,5 @@
 baseURL = "https://skalski.github.io/"
 languageCode = "en-us"
-title = "My blog"
+title = "Swen Kalski ಠ_ಠ"
 theme = "the-roots-home"
+publishDir = "docs"
