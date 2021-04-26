@@ -1,5 +1,57 @@
 baseURL = "https://skalski.github.io/"
 languageCode = "en-us"
-title = "Swen Kalski ಠ_ಠ"
-theme = "the-roots-home"
+title = "Swen Kalski ಠ_ಠ - for the record..."
 publishDir = "docs"
+
+
+author = "Swen Kalski"
+copyright = "Made with luv by Swen"
+paginate = 3
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+  
+theme="archie"
+
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+[params]
+	mode="light" # color-mode → light,dark or auto
+	useCDN=false # don't use CDNs for fonts and icons, instead serve them locally.
+	subtitle = "Everything is just my humble opinion..."
+
+# Social Tags
+
+	[[params.social]]
+	name = "GitHub"
+	icon = "github"
+	url = "https://github.com/skalski"
+
+	[[params.social]]
+	name = "Twitter"
+	icon = "twitter"
+	url = "https://twitter.com/KalskiSwen"
+
+
+# Main menu Items
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
