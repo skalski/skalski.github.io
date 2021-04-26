@@ -1,0 +1,4 @@
+baseURL = "https://skalski.github.io/"
+languageCode = "en-us"
+title = "My blog"
+theme = "the-roots-home"
