@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Today I Learned Use .thenCallRealMethod() - Swen Kalski ಠ_ಠ - for the record...</title><meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="Today I Learned Use .thenCallRealMethod()" />
+<meta property="og:description" content="I was dying to got some stuff working.
+I was mocking a method, but then there was one Method, where i needed the real output so hard." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://skalski.github.io/posts/today-i-learned-use-real-function/" />
+<meta property="article:published_time" content="2021-04-26T13:49:33+02:00" />
+<meta property="article:modified_time" content="2021-04-26T13:49:33+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Today I Learned Use .thenCallRealMethod()"/>
+<meta name="twitter:description" content="I was dying to got some stuff working.
+I was mocking a method, but then there was one Method, where i needed the real output so hard."/>
+<script src="https://skalski.github.io/js/feather.min.js"></script>
+	
+	<link href="https://skalski.github.io/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://skalski.github.io/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://skalski.github.io/">Swen Kalski ಠ_ಠ - for the record...</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Today I Learned Use .thenCallRealMethod()</h1>
+			<div class="meta">Posted on Apr 26, 2021</div>
+		</div>
+		
+		<div class="tldr">
+			<strong>tl;dr:</strong>
+			Mockito got a killerfeature: .thenCallRealMethod();
+		</div>
+
+		<section class="body">
+			<p>I was dying to got some stuff working.
+I was mocking a method, but then there was one Method, where i needed the real output so hard.</p>
+<p>But, when a method is a mock, everything is a mock.
+Example of the problem:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@GetterSetter</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SomeObject</span><span style="color:#f92672">(){</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> a<span style="color:#f92672">;</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> b<span style="color:#f92672">;</span>
+
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> function <span style="color:#a6e22e">sum</span><span style="color:#f92672">(){</span>
+
+		<span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> b<span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Now you can use it and mock it. But, what happens, when you just want to mock the Setter but will assert that <code>sum()</code> does everything as it should?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	when<span style="color:#f92672">(</span>SomeObject<span style="color:#f92672">).</span><span style="color:#a6e22e">getA</span><span style="color:#f92672">().</span><span style="color:#a6e22e">thenReturn</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+	when<span style="color:#f92672">(</span>SomeObject<span style="color:#f92672">).</span><span style="color:#a6e22e">getB</span><span style="color:#f92672">().</span><span style="color:#a6e22e">thenReturn</span><span style="color:#f92672">(</span>2<span style="color:#f92672">);</span>
+
+	assertEqual<span style="color:#f92672">(</span>someObject<span style="color:#f92672">.</span><span style="color:#a6e22e">sum</span><span style="color:#f92672">(),</span> 3<span style="color:#f92672">);</span>
+</code></pre></div><p>This will die in a NPE at least.
+Now I learned something cool&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	when<span style="color:#f92672">(</span>SomeObject<span style="color:#f92672">).</span><span style="color:#a6e22e">getA</span><span style="color:#f92672">().</span><span style="color:#a6e22e">thenReturn</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+	when<span style="color:#f92672">(</span>SomeObject<span style="color:#f92672">).</span><span style="color:#a6e22e">getB</span><span style="color:#f92672">().</span><span style="color:#a6e22e">thenReturn</span><span style="color:#f92672">(</span>2<span style="color:#f92672">);</span>
+	when<span style="color:#f92672">(</span>SomeObject<span style="color:#f92672">).</span><span style="color:#a6e22e">sum</span><span style="color:#f92672">().</span><span style="color:#a6e22e">thenCallRealMethod</span><span style="color:#f92672">();</span>
+	assertEqual<span style="color:#f92672">(</span>someObject<span style="color:#f92672">.</span><span style="color:#a6e22e">sum</span><span style="color:#f92672">(),</span> 3<span style="color:#f92672">);</span>
+</code></pre></div><p>This will do the Trick&hellip; and it saves hours on Google.</p>
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/java">java</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/skalski" title="GitHub"><i data-feather="github"></i></a>|<a class="soc" href="https://twitter.com/KalskiSwen" title="Twitter"><i data-feather="twitter"></i></a>|⚡️
+	2021  Made with luv by Swen |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

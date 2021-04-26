@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Today I Learned Use .thenCallRealMethod()</title>
+      <link>https://skalski.github.io/posts/today-i-learned-use-real-function/</link>
+      <pubDate>Mon, 26 Apr 2021 13:49:33 +0200</pubDate>
+      
+      <guid>https://skalski.github.io/posts/today-i-learned-use-real-function/</guid>
+      <description>&lt;p&gt;I was dying to got some stuff working.
+I was mocking a method, but then there was one Method, where i needed the real output so hard.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>About me...</title>
       <link>https://skalski.github.io/about/</link>
       <pubDate>Mon, 26 Apr 2021 11:44:09 +0200</pubDate>
