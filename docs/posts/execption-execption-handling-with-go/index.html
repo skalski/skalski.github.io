@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Exception Handling With Go - Swen Kalski ಠ_ಠ - for the record...</title><meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="Exception Handling With Go" />
+<meta property="og:description" content="Go is somewhat different in terms of exception handling than Java or Python, for example.
+This can sometimes be a bit special, if you also want to find errors that are not caught by the method." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://skalski.github.io/posts/execption-execption-handling-with-go/" />
+<meta property="article:published_time" content="2021-04-27T07:16:55+02:00" />
+<meta property="article:modified_time" content="2021-04-27T07:16:55+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Exception Handling With Go"/>
+<meta name="twitter:description" content="Go is somewhat different in terms of exception handling than Java or Python, for example.
+This can sometimes be a bit special, if you also want to find errors that are not caught by the method."/>
+<script src="https://skalski.github.io/js/feather.min.js"></script>
+	
+	<link href="https://skalski.github.io/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://skalski.github.io/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://skalski.github.io/">Swen Kalski ಠ_ಠ - for the record...</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Exception Handling With Go</h1>
+			<div class="meta">Posted on Apr 27, 2021</div>
+		</div>
+		
+		<div class="tldr">
+			<strong>tl;dr:</strong>
+			You can add defer RecoverPanic() to catch wild exceptions
+		</div>
+
+		<section class="body">
+			<p>Go is somewhat different in terms of exception handling than Java or Python, for example.
+This can sometimes be a bit special, if you also want to find errors that are not caught by the method.</p>
+<p>So there is no try/catch statement in Go.
+But with a little trick, you can catch such errors with <code>defer</code>.</p>
+<p>The command <code>defer</code> tells a method what to do at the end of its runtime.</p>
+<p>Example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;World!&#34;</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#e6db74">&#34;Hello, &#34;</span>)
+}
+
+</code></pre></div><p>This will output: <code>Hello, World!</code></p>
+<p>From the first glance, when you get in touch with, you mostly got no idea, what to do with it?
+Why should such a feature exists?</p>
+<p>But in the end, this feature can save your ass. Because, when a method fails, it will fail at the line, where it was writen.
+Everything else below it, will not executed.
+But <code>defer</code> is special. From the moment the line was touched by the excecution, it will run in the end of the method. It does no matter, what the outcome
+of the whole Method was.</p>
+<p>You can make use of this behavior for our exception handling:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">RecoverPanic</span>(<span style="color:#e6db74">&#34;parse panic&#34;</span>) <span style="color:#75715e">// or whatever you want to catch
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// do whatever to do now...
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">RecoverPanic</span>(<span style="color:#a6e22e">msg</span> <span style="color:#66d9ef">string</span>) {
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> recover(); <span style="color:#a6e22e">r</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">msg</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;parse panic&#34;</span> {
+			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;There was a error while parsing!&#34;</span>)
+		} <span style="color:#66d9ef">else</span> {
+			<span style="color:#75715e">//everthing else what can happen
+</span><span style="color:#75715e"></span>			<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;An unexpected Error was catched!&#34;</span>)
+		}
+	}
+}
+
+</code></pre></div><p>Now the program will no longer say goodbye with a huge stacktrace, but will output a factual error handling.
+This little Trick can help if you do something that will run on otherones Computer.
+Also you can rerun Methods from there to fix the Error or whatever.</p>
+<p>Enjoy</p>
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/go">go</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/skalski" title="GitHub"><i data-feather="github"></i></a>|<a class="soc" href="https://twitter.com/KalskiSwen" title="Twitter"><i data-feather="twitter"></i></a>|⚡️
+	2021  Made with luv by Swen |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

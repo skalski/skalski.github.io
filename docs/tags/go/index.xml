@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on Swen Kalski ಠ_ಠ - for the record...</title>
+    <link>https://skalski.github.io/tags/go/</link>
+    <description>Recent content in go on Swen Kalski ಠ_ಠ - for the record...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Made with luv by Swen</copyright>
+    <lastBuildDate>Tue, 27 Apr 2021 07:16:55 +0200</lastBuildDate>
+    
+	<atom:link href="https://skalski.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exception Handling With Go</title>
+      <link>https://skalski.github.io/posts/execption-execption-handling-with-go/</link>
+      <pubDate>Tue, 27 Apr 2021 07:16:55 +0200</pubDate>
+      
+      <guid>https://skalski.github.io/posts/execption-execption-handling-with-go/</guid>
+      <description>&lt;p&gt;Go is somewhat different in terms of exception handling than Java or Python, for example.
+This can sometimes be a bit special, if you also want to find errors that are not caught by the method.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

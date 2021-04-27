@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Made with luv by Swen</copyright>
-    <lastBuildDate>Mon, 26 Apr 2021 13:49:33 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 27 Apr 2021 07:16:55 +0200</lastBuildDate>
     
 	<atom:link href="https://skalski.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exception Handling With Go</title>
+      <link>https://skalski.github.io/posts/execption-execption-handling-with-go/</link>
+      <pubDate>Tue, 27 Apr 2021 07:16:55 +0200</pubDate>
+      
+      <guid>https://skalski.github.io/posts/execption-execption-handling-with-go/</guid>
+      <description>&lt;p&gt;Go is somewhat different in terms of exception handling than Java or Python, for example.
+This can sometimes be a bit special, if you also want to find errors that are not caught by the method.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Today I Learned Use .thenCallRealMethod()</title>
