@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>myself on Swen Kalski ಠ_ಠ - for the record...</title>
+    <link>https://skalski.github.io/tags/myself/</link>
+    <description>Recent content in myself on Swen Kalski ಠ_ಠ - for the record...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Made with luv by Swen</copyright>
+    <lastBuildDate>Tue, 27 Apr 2021 12:45:21 +0200</lastBuildDate>
+    
+	<atom:link href="https://skalski.github.io/tags/myself/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How a Hostile Environment Made Me a Better Developer</title>
+      <link>https://skalski.github.io/posts/how-a-hostile-environment-made-me-a-better-developer/</link>
+      <pubDate>Tue, 27 Apr 2021 12:45:21 +0200</pubDate>
+      
+      <guid>https://skalski.github.io/posts/how-a-hostile-environment-made-me-a-better-developer/</guid>
+      <description>&lt;p&gt;Just months ago, I was over, thinking about suicide on a daily basis and shuttling from project to project.
+I had moved from an idiot-proof developer job to a solution architect job.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
