@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Today I Learned - Use Go Docs Offline</title>
+      <link>https://skalski.github.io/posts/today-i-learned-use-go-docs-offline/</link>
+      <pubDate>Thu, 29 Apr 2021 10:20:23 +0200</pubDate>
+      
+      <guid>https://skalski.github.io/posts/today-i-learned-use-go-docs-offline/</guid>
+      <description>&lt;p&gt;Go has plentiful documentation online, but sometimes using a search engine to find the right thing in go can be tough. Go has docs at the command line though. On the first glance, it saves a lot of time. Also when you work sometimes without Internet Connection or don&amp;rsquo;t want to use a Hotspot.
+For me this sometimes happens on the Ferry or when we go by boat at the weekend.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>How a Hostile Environment Made Me a Better Developer</title>
       <link>https://skalski.github.io/posts/how-a-hostile-environment-made-me-a-better-developer/</link>
       <pubDate>Tue, 27 Apr 2021 12:45:21 +0200</pubDate>

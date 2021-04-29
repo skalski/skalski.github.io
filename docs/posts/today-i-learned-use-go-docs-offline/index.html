@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Today I Learned - Use Go Docs Offline - Swen Kalski ಠ_ಠ - for the record...</title><meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="Today I Learned - Use Go Docs Offline" />
+<meta property="og:description" content="Go has plentiful documentation online, but sometimes using a search engine to find the right thing in go can be tough. Go has docs at the command line though. On the first glance, it saves a lot of time. Also when you work sometimes without Internet Connection or don&rsquo;t want to use a Hotspot.
+For me this sometimes happens on the Ferry or when we go by boat at the weekend." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://skalski.github.io/posts/today-i-learned-use-go-docs-offline/" />
+<meta property="article:published_time" content="2021-04-29T10:20:23+02:00" />
+<meta property="article:modified_time" content="2021-04-29T10:20:23+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Today I Learned - Use Go Docs Offline"/>
+<meta name="twitter:description" content="Go has plentiful documentation online, but sometimes using a search engine to find the right thing in go can be tough. Go has docs at the command line though. On the first glance, it saves a lot of time. Also when you work sometimes without Internet Connection or don&rsquo;t want to use a Hotspot.
+For me this sometimes happens on the Ferry or when we go by boat at the weekend."/>
+<script src="https://skalski.github.io/js/feather.min.js"></script>
+	
+	<link href="https://skalski.github.io/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://skalski.github.io/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://skalski.github.io/">Swen Kalski ಠ_ಠ - for the record...</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Today I Learned - Use Go Docs Offline</h1>
+			<div class="meta">Posted on Apr 29, 2021</div>
+		</div>
+		
+		<div class="tldr">
+			<strong>tl;dr:</strong>
+			Go has the whole documentation offline by default
+		</div>
+
+		<section class="body">
+			<p>Go has plentiful documentation online, but sometimes using a search engine to find the right thing in go can be tough. Go has docs at the command line though. On the first glance, it saves a lot of time. Also when you work sometimes without Internet Connection or don&rsquo;t want to use a Hotspot.
+For me this sometimes happens on the Ferry or when we go by boat at the weekend.</p>
+<p>One feature, I already knew was this one:</p>
+<h3 id="go-docs-at-the-command-line-">Go docs at the command line &hellip;</h3>
+<p>You can use <code>go doc &lt;name-of-package&gt;</code>
+Which has a result, quiet similar to this one:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">&gt; <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">doc</span> <span style="color:#a6e22e">io</span><span style="color:#f92672">/</span><span style="color:#a6e22e">ioutil</span>
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">ioutil</span> <span style="color:#75715e">// import &#34;io/ioutil&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">Package</span> <span style="color:#a6e22e">ioutil</span> <span style="color:#a6e22e">implements</span> <span style="color:#a6e22e">some</span> <span style="color:#a6e22e">I</span><span style="color:#f92672">/</span><span style="color:#a6e22e">O</span> <span style="color:#a6e22e">utility</span> <span style="color:#a6e22e">functions</span>.
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Discard</span> <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">Writer</span> = <span style="color:#a6e22e">devNull</span>(<span style="color:#ae81ff">0</span>)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NopCloser</span>(<span style="color:#a6e22e">r</span> <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">Reader</span>) <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">ReadCloser</span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ReadAll</span>(<span style="color:#a6e22e">r</span> <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">Reader</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ReadDir</span>(<span style="color:#a6e22e">dirname</span> <span style="color:#66d9ef">string</span>) ([]<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">FileInfo</span>, <span style="color:#66d9ef">error</span>)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">ReadFile</span>(<span style="color:#a6e22e">filename</span> <span style="color:#66d9ef">string</span>) ([]<span style="color:#66d9ef">byte</span>, <span style="color:#66d9ef">error</span>)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TempDir</span>(<span style="color:#a6e22e">dir</span>, <span style="color:#a6e22e">prefix</span> <span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TempFile</span>(<span style="color:#a6e22e">dir</span>, <span style="color:#a6e22e">prefix</span> <span style="color:#66d9ef">string</span>) (<span style="color:#a6e22e">f</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">File</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">WriteFile</span>(<span style="color:#a6e22e">filename</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">data</span> []<span style="color:#66d9ef">byte</span>, <span style="color:#a6e22e">perm</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">FileMode</span>) <span style="color:#66d9ef">error</span>
+</code></pre></div><p>Or, you can use <code>go doc &lt;function&gt;</code> if the function is fully qualified with the package name.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&gt; go doc io/ioutil.WriteFile
+func WriteFile(filename string, data []byte, perm os.FileMode) error
+    WriteFile writes data to a file named by filename. If the file does not
+    exist, WriteFile creates it with permissions perm; otherwise WriteFile
+    truncates it before writing.
+</code></pre></div><p>As an example, the command <code>go doc ioutil.WriteFile</code> will also work, what is very cool.</p>
+<h3 id="but-wait-there-is-more-oh-my-god-bod">But wait&hellip; there is more (Oh my god, Bod!!)</h3>
+<p>The Go language has a wonderfully comprehensive standard library. There is documentation for all of it.
+You can access that documentation anytime if you have an internet connection via <a href="https://golang.org/doc/">https://golang.org/doc/</a>. But as I said, sometime you can&rsquo;t reach it.
+A friend of mine gave me a cool hint.</p>
+<p>If you are without an internet connection, you’re still in luck. Go has a built-in feature for serving the documentation locally offline. Just run the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ godoc -http=:6060
+</code></pre></div><p>and then visit <code>localhost:6060</code>.
+I allready knew, that this feature exists in RUST. But I didn&rsquo;t expected that in go.
+For me it&rsquo;s a real killerfeature.</p>
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/go">go</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/skalski" title="GitHub"><i data-feather="github"></i></a>|<a class="soc" href="https://twitter.com/KalskiSwen" title="Twitter"><i data-feather="twitter"></i></a>|⚡️
+	2021  Made with luv by Swen |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>
