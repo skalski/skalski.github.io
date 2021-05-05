@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Made with luv by Swen</copyright>
-    <lastBuildDate>Thu, 29 Apr 2021 10:20:23 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 05 May 2021 14:25:12 +0200</lastBuildDate>
     
 	<atom:link href="https://skalski.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>New Docdog Release Available</title>
+      <link>https://skalski.github.io/posts/new-docdog-release-available/</link>
+      <pubDate>Wed, 05 May 2021 14:25:12 +0200</pubDate>
+      
+      <guid>https://skalski.github.io/posts/new-docdog-release-available/</guid>
+      <description>&lt;p&gt;I added a new release of docdog.
+There are tons of new features that will make the developers live easier.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Today I Learned - Use Go Docs Offline</title>

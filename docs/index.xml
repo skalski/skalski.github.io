@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>New Docdog Release Available</title>
+      <link>https://skalski.github.io/posts/new-docdog-release-available/</link>
+      <pubDate>Wed, 05 May 2021 14:25:12 +0200</pubDate>
+      
+      <guid>https://skalski.github.io/posts/new-docdog-release-available/</guid>
+      <description>&lt;p&gt;I added a new release of docdog.
+There are tons of new features that will make the developers live easier.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Today I Learned - Use Go Docs Offline</title>
       <link>https://skalski.github.io/posts/today-i-learned-use-go-docs-offline/</link>
       <pubDate>Thu, 29 Apr 2021 10:20:23 +0200</pubDate>
