@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://skalski.github.io/tags/go/</loc>
+    <lastmod>2021-05-15T13:01:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://skalski.github.io/tags/golang/</loc>
+    <lastmod>2021-05-15T13:01:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://skalski.github.io/posts/</loc>
+    <lastmod>2021-05-15T13:01:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://skalski.github.io/tags/</loc>
+    <lastmod>2021-05-15T13:01:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://skalski.github.io/posts/why-is-go-the-language-for-the-next-decade/</loc>
+    <lastmod>2021-05-15T13:01:28+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://skalski.github.io/tags/docdog/</loc>
     <lastmod>2021-05-05T14:25:12+02:00</lastmod>
   </url>
@@ -10,21 +35,6 @@
   <url>
     <loc>https://skalski.github.io/posts/new-docdog-release-available/</loc>
     <lastmod>2021-05-05T14:25:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://skalski.github.io/posts/</loc>
-    <lastmod>2021-05-05T14:25:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://skalski.github.io/tags/</loc>
-    <lastmod>2021-05-05T14:25:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://skalski.github.io/tags/go/</loc>
-    <lastmod>2021-04-29T10:20:23+02:00</lastmod>
   </url>
   
   <url>

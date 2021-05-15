@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Made with luv by Swen</copyright>
-    <lastBuildDate>Thu, 29 Apr 2021 10:20:23 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 15 May 2021 13:01:28 +0200</lastBuildDate>
     
 	<atom:link href="https://skalski.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why Is Go the Language for the Next Decade</title>
+      <link>https://skalski.github.io/posts/why-is-go-the-language-for-the-next-decade/</link>
+      <pubDate>Sat, 15 May 2021 13:01:28 +0200</pubDate>
+      
+      <guid>https://skalski.github.io/posts/why-is-go-the-language-for-the-next-decade/</guid>
+      <description>&lt;p&gt;RUST is currently traded as the new replacement for C, C++ and Java. But there are better alternatives. Go (Golang) has turned out to be the better choice for me.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Today I Learned - Use Go Docs Offline</title>

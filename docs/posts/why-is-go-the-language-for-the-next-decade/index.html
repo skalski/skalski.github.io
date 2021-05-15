@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Why Is Go the Language for the Next Decade - Swen Kalski ಠ_ಠ - for the record...</title><meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:image" content=""/>
+	<meta property="og:title" content="Why Is Go the Language for the Next Decade" />
+<meta property="og:description" content="RUST is currently traded as the new replacement for C, C&#43;&#43; and Java. But there are better alternatives. Go (Golang) has turned out to be the better choice for me." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://skalski.github.io/posts/why-is-go-the-language-for-the-next-decade/" />
+<meta property="article:published_time" content="2021-05-15T13:01:28+02:00" />
+<meta property="article:modified_time" content="2021-05-15T13:01:28+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why Is Go the Language for the Next Decade"/>
+<meta name="twitter:description" content="RUST is currently traded as the new replacement for C, C&#43;&#43; and Java. But there are better alternatives. Go (Golang) has turned out to be the better choice for me."/>
+<script src="https://skalski.github.io/js/feather.min.js"></script>
+	
+	<link href="https://skalski.github.io/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://skalski.github.io/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://skalski.github.io/">Swen Kalski ಠ_ಠ - for the record...</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Why Is Go the Language for the Next Decade</h1>
+			<div class="meta">Posted on May 15, 2021</div>
+		</div>
+		
+		<div class="tldr">
+			<strong>tl;dr:</strong>
+			Go is Love - FULLSTOP
+		</div>
+
+		<section class="body">
+			<p>RUST is currently traded as the new replacement for C, C++ and Java. But there are better alternatives. Go (Golang) has turned out to be the better choice for me.</p>
+<h3 id="why-is-that">Why is that?</h3>
+<p>Go is actually comparable to RUST. Both offer a variety of features that at first glance seem very equivalent. However, Golang is a better choice, as RUST&rsquo;s syntax is too similar to C and thus takes over its inherent complexity.
+Go is different in this respect. It offers the deep level of possibilities, but does not have the &ldquo;pointer dramaturgy&rdquo; promoted by RUST. Thus one is fast on the C-Level on the way has however a better entrance.</p>
+<p>I myself started with Go only a few months ago. Nevertheless I was able to migrate a lot of projects completely. Partly in record time.
+The advantages are obvious.</p>
+<p>The code base is much smaller than for example JAVA or even C#. Also the distribution of binaries is much easier.
+On the other hand you can work quite close to the system without having to worry about the architecture. A binary that works on Windows will also work on an IOT device from the same code base without changes.
+Including file handling, memory handling and error handling.</p>
+<h3 id="lets-make-an-example">Let&rsquo;s make an example.</h3>
+<p>In java you have to do certain thinks to create an Object.
+We habe to add a POJO, with getter, setter and a lot of stuff. Or you rather add Lombok.
+At last you have</p>
+<ul>
+<li>a Controller</li>
+<li>an Object, with Getter, Setter and Builder</li>
+<li>and if everything getting &ldquo;out of hand&rdquo; a fabric&hellip;</li>
+</ul>
+<p>Well done! Not!</p>
+<p>In Go you have just your go File where you use your stuff and an <code>struct</code>.
+A <code>struct</code> represent the whole object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span>{
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">User</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">Name</span>		<span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">Addresses</span>	[]<span style="color:#a6e22e">Addresses</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Addresses</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">Street</span>	<span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">Number</span>	<span style="color:#66d9ef">int16</span>
+	<span style="color:#a6e22e">ZIP</span>	<span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">City</span>	<span style="color:#66d9ef">string</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>(){
+	<span style="color:#75715e">//here we can use the struct
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>As you can see, it is complete low-level code, but come powerful with all features you would miss.
+One of the major points at Go is, that the most needed things are already there. Netherless if you want to write an API, or a Website, complex Image manipulations or an OS at last.</p>
+<p>Another point is that the second-system effect is established with Go even with new projects. This is due to the simplicity of the language. The effect describes that one writes an already running software faster and more efficiently in the second attempt. As soon as one works with C or Go, one pays attention by default to sparseness of the code base.</p>
+<p>If I think of my software DocDog, it shows very well that this project would have considerably more complexity in Java or C#. But just the features, which seem to be missing at the beginning (OOP, classes) quickly move into the background. You write software that does a task as efficiently as possible.</p>
+<p>And I think thats beautiful :-)</p>
+		</section>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/go">go</a></li>
+					
+					<li><a href="/tags/golang">golang</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/skalski" title="GitHub"><i data-feather="github"></i></a>|<a class="soc" href="https://twitter.com/KalskiSwen" title="Twitter"><i data-feather="twitter"></i></a>|⚡️
+	2021  Made with luv by Swen |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>
